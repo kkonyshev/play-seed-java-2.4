@@ -1,0 +1,31 @@
+apply plugin: 'application'
+apply plugin: 'java'
+apply plugin: 'play'
+
+repositories {
+    jcenter {
+        name "jcenter"
+        url "http://angara.ftc.ru:8081/artifactory/jcenter"
+    }
+    maven {
+        name "typesafe-maven-release"
+        url "http://angara.ftc.ru:8081/artifactory/remote-repos"
+    }
+    ivy {
+        name "typesafe-ivy-release"
+        url "http://angara.ftc.ru:8081/artifactory/remote-repos"
+        layout "ivy"
+    }
+}
+
+dependencies {
+    compile 'com.typesafe.play:play_2.10:2.4.0'
+    compile 'com.typesafe.play:play-json_2.10:2.4.0'
+    compile 'com.typesafe.play:play-java_2.10:2.4.0'
+    testCompile 'com.typesafe.play:play-test_2.10:2.4.0'
+    testCompile 'junit:junit:4.12'
+}
+
+//tasks.withType(PlayRun) {
+//    httpPort = 9999
+//}
